@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, ScrollView, StatusBar, Text, View } from "react-native";
 import "@/global.css";
-import { Redirect,router } from "expo-router";
+import { Redirect, router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Btn from "../components/Btn";
 export default function Index() {
@@ -19,11 +19,15 @@ export default function Index() {
           <Text className="text-3xl text-white font-bold text-center">
             Lets Do it with <Text className="text-orange-500">Our App</Text>
           </Text>
-          <View className="mt-20 bg-purple-300 rounded-xl min-h-[52px] items-center justify-center ">
-            <Btn title={'continue with email'} handlePress={()=>{ router.push('/SignIn')}} />
-          </View>
+          <Btn
+            title={"continue with email"}
+            handlePress={() => {
+              router.push("/SignIn");
+            }}
+            isLoading={false}
+          />
         </View>
-      <StatusBar backgroundColor={'#323232'} barStyle={'light-content'}/>
+        <StatusBar backgroundColor={"#323232"} barStyle={"light-content"} />
       </ScrollView>
     </SafeAreaView>
   );
