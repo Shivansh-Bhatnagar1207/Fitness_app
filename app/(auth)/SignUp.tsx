@@ -41,8 +41,10 @@ const SignUp = () => {
       });
 
       Alert.alert("Success", "Account created successfully!");
-      router.push("/SignIn"); // Navigate to Sign-In page
+      setForm({ username: "", email: "", password: "" });
+      router.replace("/User"); // Navigate to Sign-In page
     } catch (error: any) {
+      setForm({ username: "", email: "", password: "" });
       console.error(error.message);
       Alert.alert("Error", error.message);
     } finally {
@@ -86,12 +88,13 @@ const SignUp = () => {
             placeholder={"************"}
             otherStyle={"mt-5"}
           />
-
-          <Btn
-            title={"Sign Up"}
-            handlePress={submit}
-            isLoading={isSubmitting}
-          />
+          {/* <View className="mt-20 bg-purple-300 rounded-xl min-h-[52px] items-center justify-center"> */}
+            <Btn
+              title={"Sign Up"}
+              handlePress={submit}
+              isLoading={isSubmitting}
+            />
+          {/* </View> */}
           <View className="justify-center pt-5 flex-row gap-2">
             <Text className="text-lg text-gray-500 font-bold">
               have an account already?

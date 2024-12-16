@@ -35,7 +35,7 @@ const SignIn = () => {
       const user = userCredential.user;
 
       Alert.alert("Success", `Welcome back, ${user.email}!`);
-      router.push("/home"); // Navigate to the home page (adjust the route as necessary)
+      router.replace("/home"); // Navigate to the home page (adjust the route as necessary)
     } catch (error: any) {
       console.error(error);
       let errorMessage = "Failed to sign in. Please try again.";
@@ -46,6 +46,7 @@ const SignIn = () => {
       }
       Alert.alert("Error", errorMessage);
     } finally {
+      setForm({ email: "", password: "" });
       setIsSubmitting(false);
     }
   };
@@ -79,11 +80,13 @@ const SignIn = () => {
             placeholder={"************"}
             otherStyle={"mt-5"}
           />
+          {/* <View className="mt-20 bg-purple-300 rounded-xl min-h-[52px] items-center justify-center"> */}
           <Btn
             title={"Sign In"}
             handlePress={submit}
             isLoading={isSubmitting}
           />
+          {/* </View> */}
           <View className="justify-center pt-5 flex-row gap-2">
             <Text className="text-lg text-gray-500 font-bold">
               do not have an account?

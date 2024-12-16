@@ -1,11 +1,13 @@
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const Home = () => {
   return (
-    <SafeAreaView>
-      <Text>Home</Text>
+    <SafeAreaView className="h-full bg-[#323232]">
+      <ScrollView>
+        <Text className="">Home</Text>
+      </ScrollView>
     </SafeAreaView>
   );
 };

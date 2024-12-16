@@ -9,7 +9,7 @@ const Btn = ({ title, handlePress ,isLoading}) => {
       className="mt-20 bg-purple-300 rounded-xl min-h-[52px] items-center justify-center "
       disabled={isLoading}
     >
-      <Text className="text-center font-bold">{title}</Text>
+      <Text className="text-center font-bold text-gray-300">{title}</Text>
     </TouchableOpacity>
   );
 };
