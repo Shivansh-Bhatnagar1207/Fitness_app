@@ -9,7 +9,7 @@ export default function TabsLayout() {
       screenOptions={{
         headerShown: false, // Disable headers for all tabs
         tabBarShowLabel: false,
-        tabBarActiveTintColor: "green",
+        tabBarActiveTintColor: "#d8b4fe",
         tabBarInactiveTintColor: "gray",
       }}
     >

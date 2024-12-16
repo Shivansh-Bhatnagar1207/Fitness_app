@@ -19,14 +19,14 @@ export default function Index() {
           <Text className="text-3xl text-white font-bold text-center">
             Lets Do it with <Text className="text-orange-500">Our App</Text>
           </Text>
-          <Btn
-            title={"continue with email"}
-            handlePress={() => {
-              router.push("/SignIn");
-            }}
-            isLoading={false}
-          />
-        </View>
+            <Btn
+              title={"continue with email"}
+              handlePress={() => {
+                router.push("/SignIn");
+              }}
+              isLoading={false}
+            />
+          </View>
         <StatusBar backgroundColor={"#323232"} barStyle={"light-content"} />
       </ScrollView>
     </SafeAreaView>

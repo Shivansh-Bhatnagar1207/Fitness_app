@@ -1,9 +1,11 @@
-import { View, Text, ScrollView, Image } from "react-native";
+import { View, Text, ScrollView, Image, Alert } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import FormField from "../../components/FormField";
 import Btn from "@/components/Btn";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "@/lib/firebaseConfig";
 
 const SignIn = () => {
   const [form, setForm] = useState({
@@ -12,7 +14,41 @@ const SignIn = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const submit = () => {};
+  const submit = async () => {
+    const { email, password } = form;
+
+    // Validation
+    if (!email || !password) {
+      Alert.alert("Error", "Please fill in all fields.");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Sign in the user
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+
+      Alert.alert("Success", `Welcome back, ${user.email}!`);
+      router.push("/home"); // Navigate to the home page (adjust the route as necessary)
+    } catch (error: any) {
+      console.error(error);
+      let errorMessage = "Failed to sign in. Please try again.";
+      if (error.code === "auth/user-not-found") {
+        errorMessage = "No account found with this email.";
+      } else if (error.code === "auth/wrong-password") {
+        errorMessage = "Incorrect password.";
+      }
+      Alert.alert("Error", errorMessage);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <SafeAreaView className="bg-[#323232] h-full">
@@ -48,7 +84,14 @@ const SignIn = () => {
             handlePress={submit}
             isLoading={isSubmitting}
           />
-          <View className="justify-center pt-5 flex-row gap-2"><Text className="text-lg text-gray-500 font-bold">do not have an account?</Text><Link href={'/SignUp'} className="text-lg text-orange-400">Sign Up</Link></View>
+          <View className="justify-center pt-5 flex-row gap-2">
+            <Text className="text-lg text-gray-500 font-bold">
+              do not have an account?
+            </Text>
+            <Link href={"/SignUp"} className="text-lg text-orange-400">
+              Sign Up
+            </Link>
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>

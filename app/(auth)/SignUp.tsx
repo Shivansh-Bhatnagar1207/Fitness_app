@@ -1,10 +1,11 @@
-import { View, Text, ScrollView, Image } from "react-native";
+import { View, Text, ScrollView, Image, Alert } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import FormField from "../../components/FormField";
 import Btn from "@/components/Btn";
-import { Link } from "expo-router";
-
+import { Link, router } from "expo-router";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth } from "@/lib/firebaseConfig";
 const SignUp = () => {
   const [form, setForm] = useState({
     username: "",
@@ -13,7 +14,41 @@ const SignUp = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const submit = () => {};
+  const submit = async () => {
+    const { email, password, username } = form;
+
+    if (!username || !email || !password) {
+      Alert.alert("Error", "All fields are required.");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Firebase authentication
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+
+      // Optional: Update the user's display name
+
+      // Update user's display name
+      await updateProfile(user, {
+        displayName: username,
+      });
+
+      Alert.alert("Success", "Account created successfully!");
+      router.push("/SignIn"); // Navigate to Sign-In page
+    } catch (error: any) {
+      console.error(error.message);
+      Alert.alert("Error", error.message);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <SafeAreaView className="bg-[#323232] h-full">
@@ -51,8 +86,9 @@ const SignUp = () => {
             placeholder={"************"}
             otherStyle={"mt-5"}
           />
+
           <Btn
-            title={"Sign In"}
+            title={"Sign Up"}
             handlePress={submit}
             isLoading={isSubmitting}
           />
