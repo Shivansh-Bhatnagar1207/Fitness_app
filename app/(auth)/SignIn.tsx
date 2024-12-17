@@ -35,7 +35,7 @@ const SignIn = () => {
       const user = userCredential.user;
 
       Alert.alert("Success", `Welcome back, ${user.email}!`);
-      router.replace("/home"); // Navigate to the home page (adjust the route as necessary)
+      router.replace("/Home"); // Navigate to the home page (adjust the route as necessary)
     } catch (error: any) {
       console.error(error);
       let errorMessage = "Failed to sign in. Please try again.";

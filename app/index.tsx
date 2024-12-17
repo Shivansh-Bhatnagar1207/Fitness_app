@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, ScrollView, StatusBar, Text, View } from "react-native";
 import "@/global.css";
-import { Redirect, router } from "expo-router";
+import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Btn from "../components/Btn";
 export default function Index() {
@@ -15,12 +15,12 @@ export default function Index() {
             resizeMode="contain"
           />
         </View>
-        <View className="relative mt-24 w-24 mx-auto">
+        <View className="relative mt-24 w-36 mx-auto">
           <Text className="text-3xl text-white font-bold text-center">
             Lets Do it with <Text className="text-orange-500">Our App</Text>
           </Text>
             <Btn
-              title={"continue with email"}
+              title={"Sign In"}
               handlePress={() => {
                 router.push("/SignIn");
               }}

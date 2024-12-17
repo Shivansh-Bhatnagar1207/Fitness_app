@@ -67,7 +67,7 @@ export default function User() {
       });
 
       Alert.alert("Success", "Your details have been saved!");
-      router.replace("/home"); // Navigate to the next screen
+      router.replace("/Home"); // Navigate to the next screen
     } catch (error) {
       console.error("Error saving user data:", error);
       Alert.alert("Error", "Failed to save your details. Please try again.");

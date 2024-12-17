@@ -26,7 +26,7 @@ const FormField = ({
         }} // Adjust contrast
       >
         <TextInput
-          className=" text-white font-bold text-base"
+          className=" text-white font-bold text-base "
           value={value}
           placeholder={placeholder}
           placeholderTextColor="#7b7b8b"
