@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import FormField from "../components/FormField";
 import Btn from "../components/Btn";
-import { Link, router } from "expo-router";
+import { router } from "expo-router";
 import { auth, db } from "../lib/firebaseConfig";
 import { doc, setDoc } from "firebase/firestore";
 export default function User() {
@@ -115,7 +115,7 @@ export default function User() {
             title="Height"
             value={form.Height}
             handleChangeText={(e) => setForm({ ...form, Height: e })}
-            placeholder={"6 ft"}
+            placeholder={"in Meter"}
             otherStyle={"mt-5"}
           />
           <FormField
