@@ -6,11 +6,14 @@ const workout = () => {
   return (
     <SafeAreaView className="h-full bg-[#323232]">
       <ScrollView className="p-10">
-        <View className="flex-row flex-wrap items-center justify-center gap-5 mt-10">
-          <Card id="bulk" />
-          <Card id="lean" />
-          <Card id="fit" />
-          <Card id="yoga" />
+        <View
+          className="flex-row flex-wrap items-center justify-center gap-5 mt-10"
+          
+        >
+          <Card id="Bulk" />
+          <Card id="Lean" />
+          <Card id="Fit" />
+          <Card id="Yoga" />
         </View>
       </ScrollView>
     </SafeAreaView>

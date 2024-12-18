@@ -22,7 +22,7 @@ export default function Index() {
             <Btn
               title={"Sign In"}
               handlePress={() => {
-                router.push("/SignIn");
+                router.push("/Home");
               }}
               isLoading={false}
             />
