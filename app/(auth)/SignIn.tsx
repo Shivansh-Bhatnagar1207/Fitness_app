@@ -52,15 +52,15 @@ const SignIn = () => {
   };
 
   return (
-    <SafeAreaView className="bg-[#323232] h-full">
+    <SafeAreaView className="bg-[#faf9f6] h-full">
       <ScrollView>
         <View className="w-full h-full justify-center min-h-[85vh] px-4 my-6 ">
           <Image
             source={require("../../assets/images/logo.png")}
-            resizeMode="contain"
-            className="w-[115px] h-[35px]"
+            className="w-full h-[84px]"
+            resizeMode="cover"
           />
-          <Text className="text-semibold text-white text-2xl mt-10">
+          <Text className="text-semibold  text-2xl mt-10 text-center">
             Log into Fitness App
           </Text>
 

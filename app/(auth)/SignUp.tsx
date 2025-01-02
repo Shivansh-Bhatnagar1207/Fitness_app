@@ -53,47 +53,49 @@ const SignUp = () => {
   };
 
   return (
-    <SafeAreaView className="bg-[#323232] h-full">
+    <SafeAreaView className="bg-[#faf9f6] h-full">
       <ScrollView>
         <View className="w-full h-full justify-center min-h-[85vh] px-4 my-6 ">
           <Image
             source={require("../../assets/images/logo.png")}
-            resizeMode="contain"
-            className="w-[115px] h-[35px]"
+            className="w-full h-[85px] "
+            resizeMode="cover"
           />
-          <Text className="text-semibold text-white text-2xl mt-10">
+          <Text className="text-semibold text-center text-2xl mt-10">
             Sign Up in Fitness App
           </Text>
-          <FormField
-            title="Name"
-            value={form.username}
-            handleChangeText={(e: any) => setForm({ ...form, username: e })}
-            placeholder={"John Doe"}
-            otherStyle={"mt-5"}
-          />
-          <FormField
-            title="Email"
-            value={form.email}
-            handleChangeText={(e: any) => setForm({ ...form, email: e })}
-            keyboardType="email-address"
-            placeholder={"JohnDoe@gmail.com"}
-            otherStyle={"mt-5"}
-          />
+          <View className="w-[85%] mx-auto">
+            <FormField
+              title="Name"
+              value={form.username}
+              handleChangeText={(e: any) => setForm({ ...form, username: e })}
+              placeholder={"John Doe"}
+              otherStyle={"mt-5"}
+            />
+            <FormField
+              title="Email"
+              value={form.email}
+              handleChangeText={(e: any) => setForm({ ...form, email: e })}
+              keyboardType="email-address"
+              placeholder={"JohnDoe@gmail.com"}
+              otherStyle={"mt-5"}
+            />
 
-          <FormField
-            title="password"
-            value={form.password}
-            handleChangeText={(e: any) => setForm({ ...form, password: e })}
-            keyboardType="email-address"
-            placeholder={"************"}
-            otherStyle={"mt-5"}
-          />
-          {/* <View className="mt-20 bg-purple-300 rounded-xl min-h-[52px] items-center justify-center"> */}
+            <FormField
+              title="password"
+              value={form.password}
+              handleChangeText={(e: any) => setForm({ ...form, password: e })}
+              keyboardType="email-address"
+              placeholder={"************"}
+              otherStyle={"mt-5"}
+            />
+            {/* <View className="mt-20 bg-purple-300 rounded-xl min-h-[52px] items-center justify-center"> */}
             <Btn
               title={"Sign Up"}
               handlePress={submit}
               isLoading={isSubmitting}
             />
+          </View>
           {/* </View> */}
           <View className="justify-center pt-5 flex-row gap-2">
             <Text className="text-lg text-gray-500 font-bold">

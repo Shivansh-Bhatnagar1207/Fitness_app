@@ -4,9 +4,9 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import Card from "../../components/Card";
 const workout = () => {
   return (
-    <SafeAreaView className="h-full bg-[#323232]">
-      <ScrollView className="p-10">
-        <View className="flex-row flex-wrap items-center justify-center gap-20 mt-10">
+    <SafeAreaView className="h-full bg-[#faf9f6]">
+      <ScrollView className="">
+        <View className="gap-10 p-10">
           <Card id="Bulk" />
           <Card id="Lean" />
           <Card id="Fit" />

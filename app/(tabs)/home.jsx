@@ -1,70 +1,35 @@
-import {
-  View,
-  Text,
-  ScrollView,
-  Image,
-  Alert,
-  ActivityIndicator,
-} from "react-native";
-import React, { useEffect, useState } from "react";
+import { View, Text, ScrollView, Image, ActivityIndicator } from "react-native";
+import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { doc, getDoc } from "firebase/firestore";
-import { auth, db } from "../../lib/firebaseConfig";
+import { useUser } from "@/context/UserContext";
 
 export default function Home() {
-  const [userData, setUserData] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchUserData = async () => {
-      const user = auth.currentUser;
-
-      if (!user) {
-        Alert.alert("Error", "No user is logged in.");
-        setLoading(false);
-        return;
-      }
-
-      try {
-        // Reference the user's document in Firestore
-        const userDocRef = doc(db, "users", user.uid);
-        const userDocSnap = await getDoc(userDocRef);
-
-        if (userDocSnap.exists()) {
-          setUserData(userDocSnap.data());
-        } else {
-          Alert.alert("Error", "No user data found.");
-        }
-      } catch (error) {
-        console.error("Error fetching user data:", error);
-        Alert.alert("Error", "Failed to fetch user data.");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchUserData();
-  }, []);
+  const { userData, loading } = useUser();
 
   const { name, Height, Weight } = userData || {};
 
   let BMI = Weight / (Height * Height);
   BMI = BMI.toFixed(2);
-
   let category;
+  let textColor;
+
   if (BMI < 18.5) {
     category = "Underweight";
+    textColor = "text-red-500";
   } else if (BMI >= 18.5 && BMI < 24.9) {
     category = "Normal weight";
+    textColor = "text-green-500";
   } else if (BMI >= 25 && BMI < 29.9) {
     category = "Overweight";
+    textColor = "text-orange-500";
   } else {
     category = "Obesity";
+    textColor = "text-black";
   }
 
   if (loading) {
     return (
-      <SafeAreaView className="bg-[#323232] h-full flex justify-center items-center">
+      <SafeAreaView className="bg-[#faf9f6] h-full flex justify-center items-center">
         <ActivityIndicator size="large" color="#fff" />
       </SafeAreaView>
     );
@@ -72,34 +37,87 @@ export default function Home() {
 
   if (!userData) {
     return (
-      <SafeAreaView className="bg-[#323232] h-full flex justify-center items-center">
+      <SafeAreaView className="bg-[#faf9f6] h-full flex justify-center items-center">
         <Text className="text-white text-xl">No data to display.</Text>
       </SafeAreaView>
     );
   }
 
   return (
-    <SafeAreaView className="bg-[#323232] h-full">
+    <SafeAreaView className="bg-[#faf9f6] h-full">
       <ScrollView>
-        <View className="w-full h-full p-10 min-h-[85vh]  ">
+        <View className=" ">
           <Image
             source={require("../../assets/images/logo.png")}
-            resizeMode="contain"
-            className="w-[115px] h-[35px] mx-auto"
+            className="w-full h-[84px]"
+            resizeMode="cover"
           />
-          <Text className="text-semibold text-white text-2xl mt-10 text-center">
-            Welcome {name}
+          <Text className="text-bold text-2xl mt-10 text-center ">
+            Welcome {name}!!
           </Text>
 
-          <View className="h-64 w-[85vw] bg-white my-10 px-5 rounded-md">
+          <View className="py-5 bg-white w-[85vw]  my-10 mx-auto px-5 border-black border-2 rounded-md">
             <Text className="text-4xl text-center font-bold py-2">BMI</Text>
-            <Text className="text-l font-semibold">Height : {Height} ft</Text>
-            <Text className="text-l font-semibold">Weight : {Weight} Kg</Text>
-            <Text className="text-center">
+            <View className="flex-row justify-between">
+              <Text className="text-base p-2">
+                <Text className="font-bold">Height : </Text>
+                {Height} ft
+              </Text>
+              <Text className="text-base p-2">
+                <Text className="font-bold">Weight : </Text>
+                {Weight} ft
+              </Text>
+            </View>
+            <Text className="text-center my-2">
               On Calculating your BMI is as follows:
             </Text>
-            <Text className="text-center">{BMI}</Text>
-            <Text>According to this you are {category}</Text>
+            <Text
+              className={`text-center ${textColor} text-4xl font-extrabold`}
+            >
+              {BMI}
+            </Text>
+
+            <Text className="text-center">
+              According to this you are{" "}
+              <Text className={`${textColor}`}>{category}</Text>
+            </Text>
+            <View className="flex-row mt-5">
+              <View className="h-5 w-[25%] bg-red-500"></View>
+              <View className="h-5 w-[25%] bg-green-500"></View>
+              <View className="h-5 w-[25%] bg-orange-500"></View>
+              <View className="h-5 w-[25%] bg-black"></View>
+            </View>
+            <View className="flex-row">
+              <View className="h-10 w-[25%] ">
+                <Text className="text-center">Under Weight</Text>
+              </View>
+              <View className="h-10 w-[25%] ">
+                <Text className="text-center">Normal</Text>
+              </View>
+              <View className="h-10 w-[25%] ">
+                <Text className="text-center">Over Weight</Text>
+              </View>
+              <View className="h-10 w-[25%] ">
+                <Text className="text-center">Obesity</Text>
+              </View>
+            </View>
+          </View>
+          <Text className=" text-center text-4xl font-bold">
+            Today's Activites
+          </Text>
+          <View className=" flex-col justify-around gap-10 py-10">
+            <View className="bg-white h-28  w-[85vw]  mx-auto px-5 border-2 rounded-md py-5">
+              <Text className="font-bold text-lg text-center">0.00</Text>
+              <Text className="text-center text-xl">KCAL</Text>
+            </View>
+            <View className="bg-white h-28 w-[85vw]  mx-auto px-5 border-2 rounded-md py-5">
+              <Text className="font-bold text-lg text-center">0</Text>
+              <Text className="text-center text-xl">WORKOUTS</Text>
+            </View>
+            <View className="bg-white h-28 w-[85vw]  mx-auto px-5 border-2 rounded-md py-5">
+              <Text className="font-bold text-lg text-center">0</Text>
+              <Text className="text-center text-xl">MINUTES</Text>
+            </View>
           </View>
         </View>
       </ScrollView>

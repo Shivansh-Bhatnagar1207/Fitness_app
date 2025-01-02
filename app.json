@@ -9,15 +9,14 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true,
-    
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff",
-        
-      }
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.anonymous.fitnessapp"
     },
     "web": {
       "bundler": "metro",

@@ -1,113 +1,83 @@
-import {
-  View,
-  Text,
-  ScrollView,
-  Image,
-  Alert,
-  ActivityIndicator,
-} from "react-native";
-import React, { useEffect, useState } from "react";
+import { View, Text, ScrollView, Image } from "react-native";
+import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { doc, getDoc } from "firebase/firestore";
-import { auth, db } from "../../lib/firebaseConfig";
-import { signOut } from "firebase/auth";
+import { auth } from "../../lib/firebaseConfig";
 import Btn from "@/components/Btn";
+import { useUser } from "@/context/UserContext";
 import { router } from "expo-router";
 
 export default function Profile() {
-  const [userData, setUserData] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchUserData = async () => {
-      const user = auth.currentUser;
-
-      if (!user) {
-        Alert.alert("Error", "No user is logged in.");
-        setLoading(false);
-        return;
-      }
-
-      try {
-        // Reference the user's document in Firestore
-        const userDocRef = doc(db, "users", user.uid);
-        const userDocSnap = await getDoc(userDocRef);
-
-        if (userDocSnap.exists()) {
-          setUserData(userDocSnap.data());
-        } else {
-          Alert.alert("Error", "No user data found.");
-        }
-      } catch (error) {
-        console.error("Error fetching user data:", error);
-        Alert.alert("Error", "Failed to fetch user data.");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchUserData();
-  }, []);
-
-  if (loading) {
-    return (
-      <SafeAreaView className="bg-[#323232] h-full flex justify-center items-center">
-        <ActivityIndicator size="large" color="#fff" />
-      </SafeAreaView>
-    );
-  }
-
-  if (!userData) {
-    return (
-      <SafeAreaView className="bg-[#323232] h-full flex justify-center items-center">
-        <Text className="text-white text-xl">No data to display.</Text>
-      </SafeAreaView>
-    );
-  }
+  const { user, userData, loading } = useUser();
 
   const handleLogout = async () => {
     try {
-      await signOut(auth); // Logs the user out
-      Alert.alert("Success", "You have been logged out.");
-      router.replace("/SignIn"); // Redirect to the Sign In page
+      await auth.signOut();
+      console.log("User logged out!");
+      router.navigate("/SignIn");
     } catch (error) {
-      console.error("Logout error:", error);
-      Alert.alert("Error", "Failed to log out. Please try again.");
+      console.error("Error logging out:", error);
     }
   };
 
+  if (loading) {
+    return <Text>Loading...</Text>;
+  }
+
+  if (!user) {
+    return <Text>No user logged in.</Text>;
+  }
+
   return (
-    <SafeAreaView className="bg-[#323232] h-full">
+    <SafeAreaView className="bg-[#faf9f6] h-full">
       <ScrollView>
-        <View className="w-full h-full justify-center min-h-[85vh] px-4 my-6 ">
+        <View className="py-10">
           <Image
             source={require("../../assets/images/logo.png")}
-            resizeMode="contain"
-            className="w-[115px] h-[35px] mx-auto"
+            className="w-full h-[84px] "
+            resizeMode="cover"
           />
-          <Text className="text-semibold text-white text-2xl mt-10">
+          <Text className="font-bold text-2xl text-center mt-10">
             Profile Information
           </Text>
 
-          <View className="mt-5">
-            <Text className="text-lg text-white">Name: {userData.name}</Text>
-            <Text className="text-lg text-white">
-              Phone: {userData.PhoneNo}
-            </Text>
-            <Text className="text-lg text-white">
-              Date of Birth: {userData.DateOfBirth}
-            </Text>
-            <Text className="text-lg text-white">
-              Height: {userData.Height}
-            </Text>
-            <Text className="text-lg text-white">
-              Weight: {userData.Weight}
-            </Text>
-            <Text className="text-lg text-white">
-              Gender: {userData.Gender}
-            </Text>
+          <View className=" gap-4 items-center mt-10">
+            <View className="h-16 w-[80%] bg-white border justify-center rounded-md">
+              <Text className="text-center font-bold text-lg">
+                Name : <Text className="font-normal">{userData.name}</Text>
+              </Text>
+            </View>
+            <View className="h-16 w-[80%] bg-white border justify-center rounded-md">
+              <Text className="text-center font-bold text-lg">
+                Phone : <Text className="font-normal">{userData.PhoneNo}</Text>
+              </Text>
+            </View>
+            <View className="h-16 w-[80%] bg-white border justify-center rounded-md">
+              <Text className="text-center font-bold text-lg">
+                Date Of Birth :{" "}
+                <Text className="font-normal">{userData.DateOfBirth}</Text>
+              </Text>
+            </View>
+            <View className="h-16 w-[80%] bg-white border justify-center rounded-md">
+              <Text className="text-center font-bold text-lg">
+                Height :{" "}
+                <Text className="font-normal">{userData.Height} M</Text>
+              </Text>
+            </View>
+            <View className="h-16 w-[80%] bg-white border justify-center rounded-md">
+              <Text className="font-bold text-center">
+                Weight :{" "}
+                <Text className="font-normal">{userData.Weight} KG</Text>
+              </Text>
+            </View>
+            <View className="h-16 w-[80%] bg-white border justify-center rounded-md">
+              <Text className="text-center font-bold text-lg">
+                Gender : <Text className="font-normal">{userData.Gender}</Text>
+              </Text>
+            </View>
           </View>
-          <Btn title='Sign Out' handlePress={handleLogout}/>
+          <View className="w-[90%] mx-auto">
+            <Btn title="Sign Out" handlePress={handleLogout} />
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>

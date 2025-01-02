@@ -17,7 +17,7 @@ const images = {
 const Card = ({ id }) => {
   const imageSource = images[id] || images.default;
   return (
-    <View>
+    <View className="border w-[80%]">
       <Link href={`/${id}`}>
         <ImageBackground
           source={imageSource}
@@ -25,7 +25,7 @@ const Card = ({ id }) => {
           resizeMode="contain"
         >
           <View style={styles.text}>
-            <Text className="font-bold text-white text-center">{id}</Text>
+            <Text className="font-bold text-white text-center ">{id}</Text>
           </View>
         </ImageBackground>
       </Link>
