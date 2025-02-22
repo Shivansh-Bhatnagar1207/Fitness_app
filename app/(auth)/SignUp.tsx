@@ -53,7 +53,7 @@ const SignUp = () => {
   };
 
   return (
-    <SafeAreaView className="bg-[#faf9f6] h-full">
+    <SafeAreaView className="bg-bgnd h-full">
       <ScrollView>
         <View className="w-full h-full justify-center min-h-[85vh] px-4 my-6 ">
           <Image
@@ -89,7 +89,6 @@ const SignUp = () => {
               placeholder={"************"}
               otherStyle={"mt-5"}
             />
-            {/* <View className="mt-20 bg-purple-300 rounded-xl min-h-[52px] items-center justify-center"> */}
             <Btn
               title={"Sign Up"}
               handlePress={submit}

@@ -19,16 +19,13 @@ export default function Profile() {
     }
   };
 
-  if (loading) {
-    return <Text>Loading...</Text>;
-  }
 
   if (!user) {
-    return <Text>No user logged in.</Text>;
+    return <Text className="text-black">No user logged in.</Text>;
   }
 
   return (
-    <SafeAreaView className="bg-[#faf9f6] h-full">
+    <SafeAreaView className="bg-bgnd h-full">
       <ScrollView>
         <View className="py-10">
           <Image
@@ -41,35 +38,35 @@ export default function Profile() {
           </Text>
 
           <View className=" gap-4 items-center mt-10">
-            <View className="h-16 w-[80%] bg-white border justify-center rounded-md">
+            <View className="h-16 w-[80%] bg-white border justify-center rounded-3xl">
               <Text className="text-center font-bold text-lg">
                 Name : <Text className="font-normal">{userData.name}</Text>
               </Text>
             </View>
-            <View className="h-16 w-[80%] bg-white border justify-center rounded-md">
+            <View className="h-16 w-[80%] bg-white border justify-center rounded-3xl">
               <Text className="text-center font-bold text-lg">
                 Phone : <Text className="font-normal">{userData.PhoneNo}</Text>
               </Text>
             </View>
-            <View className="h-16 w-[80%] bg-white border justify-center rounded-md">
+            <View className="h-16 w-[80%] bg-white border justify-center rounded-3xl">
               <Text className="text-center font-bold text-lg">
                 Date Of Birth :{" "}
                 <Text className="font-normal">{userData.DateOfBirth}</Text>
               </Text>
             </View>
-            <View className="h-16 w-[80%] bg-white border justify-center rounded-md">
+            <View className="h-16 w-[80%] bg-white border justify-center rounded-3xl">
               <Text className="text-center font-bold text-lg">
                 Height :{" "}
                 <Text className="font-normal">{userData.Height} M</Text>
               </Text>
             </View>
-            <View className="h-16 w-[80%] bg-white border justify-center rounded-md">
+            <View className="h-16 w-[80%] bg-white border justify-center rounded-3xl">
               <Text className="font-bold text-center">
                 Weight :{" "}
                 <Text className="font-normal">{userData.Weight} KG</Text>
               </Text>
             </View>
-            <View className="h-16 w-[80%] bg-white border justify-center rounded-md">
+            <View className="h-16 w-[80%] bg-white border justify-center rounded-3xl">
               <Text className="text-center font-bold text-lg">
                 Gender : <Text className="font-normal">{userData.Gender}</Text>
               </Text>

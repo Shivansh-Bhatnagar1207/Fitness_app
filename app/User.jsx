@@ -77,15 +77,15 @@ export default function User() {
   };
 
   return (
-    <SafeAreaView className="bg-[#323232] h-full">
+    <SafeAreaView className=" bg-bgnd">
       <ScrollView>
         <View className="w-full h-full justify-center  min-h-[85vh] px-4 my-6 ">
           <Image
             source={require("../assets/images/logo.png")}
-            resizeMode="contain"
-            className="w-[115px] h-[35px] mx-auto"
+            resizeMode="cover"
+            className="w-full h-32 "
           />
-          <Text className="text-semibold text-white text-2xl mt-10">
+          <Text className="font-bold text-center text-2xl">
             User Details
           </Text>
 
