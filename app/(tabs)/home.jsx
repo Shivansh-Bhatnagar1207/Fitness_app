@@ -289,20 +289,21 @@ export default function Home() {
             ></ImageBackground>
           </View>
         </View>
-        <View className=" flex-row py-10 gap-1 p-3">
-          <View className="bg-white h-20  w-[28vw]   mx-auto px-5 flex items-center justify-center rounded-full">
-            <Text className="font-bold text-lg ">0.00</Text>
-            <Text className=" text-l">KCAL</Text>
+        <ImageBackground source={require("../../assets/images/background.jpg")}
+         className="flex-row justify-center my-5 border-primary border mx-auto rounded-full bg-secondary overflow-hidden">
+          <View className="h-20 w-30 px-5 flex items-center justify-center">
+            <Text className="font-bold text-lg text-white ">0.00</Text>
+            <Text className=" font-bold text-lg text-white">KCAL</Text>
           </View>
-          <View className="bg-white h-20 w-[28vw]  mx-auto px-5 flex items-center justify-center rounded-full">
-            <Text className="font-bold text-lg ">0</Text>
-            <Text className=" text-l">WORKOUTS</Text>
+          <View className="h-20 w-30 px-5 flex items-center justify-center">
+            <Text className="font-bold text-lg text-white ">0</Text>
+            <Text className="font-bold text-lg text-white">WORKOUTS</Text>
           </View>
-          <View className="bg-white h-20 w-[28vw]  mx-auto px-5 flex items-center justify-center rounded-full">
-            <Text className="font-bold text-lg ">0</Text>
-            <Text className=" text-l">MINUTES</Text>
+          <View className="h-20 w-30 px-5 flex items-center justify-center">
+            <Text className="font-bold text-lg text-white">0</Text>
+            <Text className="font-bold text-lg text-white">MINUTES</Text>
           </View>
-        </View>
+        </ImageBackground>
       </ScrollView>
     </SafeAreaView>
   );
