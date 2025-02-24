@@ -31,8 +31,8 @@ export default function TabsLayout() {
         <Tabs.Screen
           name="Workout"
           options={{
-            headerTitle: "Select Workout",
-            headerTitleAlign: "center",
+            headerTitle: "Plans",
+            headerTitleAlign: "left",
             tabBarIcon: ({ color }) => (
               <FontAwesome5 name="weight-hanging" color={color} size={20} />
             ),

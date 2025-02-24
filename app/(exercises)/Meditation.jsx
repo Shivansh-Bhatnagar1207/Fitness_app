@@ -2,11 +2,11 @@ import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const Lean = () => {
+const Yoga = () => {
   return (
-    <SafeAreaView className="h-screen bg-[#323232]">
-      <Text className="text-white text-center text-4xl font-bold py-5">
-        The Excesrces to Lean you up
+    <SafeAreaView className="h-screen bg-bgnd">
+      <Text className=" text-center text-4xl font-bold py-5">
+        The Excesrces to Yoga you up
       </Text>
       <ScrollView>
         <View className="items-center">
@@ -15,7 +15,7 @@ const Lean = () => {
             style={styles.container}
             resizeMode="contain"
           />
-          <Text className="text-white font-semibold py-5">
+          <Text className=" font-semibold py-5">
             Wide Arm Pushups
           </Text>
 
@@ -24,7 +24,7 @@ const Lean = () => {
             style={styles.container}
             resizeMode="contain"
           />
-          <Text className="text-white font-semibold py-5">
+          <Text className=" font-semibold py-5">
             Wide Arm Pushups
           </Text>
 
@@ -33,7 +33,7 @@ const Lean = () => {
             style={styles.container}
             resizeMode="contain"
           />
-          <Text className="text-white font-semibold py-5">
+          <Text className=" font-semibold py-5">
             Wide Arm Pushups
           </Text>
         </View>
@@ -53,4 +53,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Lean;
+export default Yoga;

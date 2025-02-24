@@ -5,14 +5,16 @@ export default function ExerciseLayout() {
     <Stack
       screenOptions={{
         headerStyle: {
-          backgroundColor: "#d8b4fe",
+          backgroundColor: "#FF9D3D",
         },
-        headerBackVisible: false,
+        headerTintColor: "white",
       }}
     >
-      <Stack.Screen name="Bulk" />
-      <Stack.Screen name="Lean" />
-      <Stack.Screen name="Fit" />
+      <Stack.Screen name="Weight" />
+      <Stack.Screen name="Zumba" />
+      <Stack.Screen name="Cardio" />
+      <Stack.Screen name="Streching" />
+      <Stack.Screen name="Meditation" />
       <Stack.Screen name="Yoga" />
     </Stack>
   );

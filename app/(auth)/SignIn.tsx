@@ -60,7 +60,7 @@ const SignIn = () => {
             className="w-full h-[84px]"
             resizeMode="cover"
           />
-          <Text className="text-semibold  text-2xl mt-10 text-center">
+          <Text className="font-bold  text-2xl mt-10 text-center">
             Log into Fitness App
           </Text>
 
