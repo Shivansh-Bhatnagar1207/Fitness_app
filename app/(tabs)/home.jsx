@@ -19,6 +19,7 @@ import Animated, {
   Extrapolation,
 } from "react-native-reanimated";
 import { Ionicons } from "@expo/vector-icons";
+import { router } from "expo-router";
 
 const { width } = Dimensions.get("window");
 const CARD_WIDTH = width * 0.9;
@@ -269,18 +270,28 @@ export default function Home() {
           </View>
           <View className="flex-row mx-auto mt-2 gap-4">
             <View className="flex justify-evenly">
-              <View className="flex items-center justify-center w-44 h-24 bg-white rounded-3xl border-primary border">
+              <TouchableOpacity
+                onPress={() => {
+                  router.push("/Steps");
+                }}
+                className="flex items-center justify-center w-44 h-24 bg-white rounded-3xl border-primary border"
+              >
                 <Text className="font-semibold">
                   Steps{" "}
                   <Ionicons name="footsteps" size={20} color={"#FFBD73"} />
                 </Text>
-              </View>
-              <View className="flex items-center justify-center w-44 h-24 bg-white rounded-3xl border-primary border">
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  router.push("/Hydration");
+                }}
+                className="flex items-center justify-center w-44 h-24 bg-white rounded-3xl border-primary border"
+              >
                 <Text className="font-semibold">
                   Hydration{" "}
                   <Ionicons name="water-outline" size={20} color={"#FFBD73"} />{" "}
                 </Text>
-              </View>
+              </TouchableOpacity>
             </View>
             <ImageBackground
               source={require("../../assets/images/hero.jpg")}
@@ -289,8 +300,10 @@ export default function Home() {
             ></ImageBackground>
           </View>
         </View>
-        <ImageBackground source={require("../../assets/images/background.jpg")}
-         className="flex-row justify-center my-5 border-primary border mx-auto rounded-full bg-secondary overflow-hidden">
+        <ImageBackground
+          source={require("../../assets/images/background.jpg")}
+          className="flex-row justify-center my-5 border-primary border mx-auto rounded-full bg-secondary overflow-hidden"
+        >
           <View className="h-20 w-30 px-5 flex items-center justify-center">
             <Text className="font-bold text-lg text-white ">0.00</Text>
             <Text className=" font-bold text-lg text-white">KCAL</Text>

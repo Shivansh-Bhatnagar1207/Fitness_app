@@ -6,7 +6,7 @@ const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
     const [user, setUser] = useState(null);
-    const [userData, setUserData] = useState(null);
+    const [userData, setUserData] = useState({});
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {

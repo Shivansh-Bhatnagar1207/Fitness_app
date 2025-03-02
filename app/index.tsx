@@ -22,13 +22,13 @@ export default function Index() {
           {/* <View className="bg-orange-500"> */}
 
           <Btn
-            title={"Sign In"}
+            title="Let's begin"
             handlePress={() => {
               router.push("/SignIn");
             }}
             isLoading={false}
           />
-          </View>
+        </View>
         {/* </View> */}
         <StatusBar backgroundColor={"#323232"} barStyle={"light-content"} />
       </ScrollView>
