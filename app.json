@@ -4,7 +4,7 @@
     "slug": "fitness-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "..assets/images/logo.png",
+    "icon": "assets/images/logo.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -13,7 +13,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "assets/images/logo.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.anonymous.fitnessapp"
@@ -43,7 +43,7 @@
         "origin": false
       },
       "eas": {
-        "projectId": "b7ffef01-4c54-4141-98b7-4397c7d08038"
+        "projectId": "cafdecad-7beb-450f-8409-6b42e6546744"
       }
     }
   }
