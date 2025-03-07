@@ -1,21 +1,30 @@
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
-import { FontAwesome5 } from "@expo/vector-icons";
 import { Switch } from "react-native";
 
+type props = {
+  title: string,
+  value: string,
+  placeholder: string,
+  handleChangeText: any,
+};
 const FormField = ({
   title,
   value,
   placeholder,
   handleChangeText,
-  otherStyle,
   ...props
-}) => {
+}: props) => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <View className={`${otherStyle}`}>
-      <Text className="text-xl mx-3 font-extrabold">{title}:</Text>
+    <View>
+      <Text
+        className="text-xl mx-3 font-extrabold "
+        style={{ fontWeight: "bold", paddingInline: 8, marginBlock: 2 }}
+      >
+        {title}:
+      </Text>
       <View
         className={`border-2 w-full h-14 items-center flex-row rounded-xl`}
         style={{
@@ -25,7 +34,8 @@ const FormField = ({
           flexDirection: "row",
           justifyContent: "space-between",
           paddingInline: 10,
-        }} // Adjust contrast
+          height: 50,
+        }}
       >
         <TextInput
           className="text-base w-full "
@@ -33,10 +43,10 @@ const FormField = ({
           placeholder={placeholder}
           placeholderTextColor="#7b7b8b"
           onChangeText={handleChangeText}
-          secureTextEntry={title === "password" && !showPassword}
+          secureTextEntry={title === "Password" && !showPassword}
         />
       </View>
-      {title === "password" && (
+      {title === "Password" && (
         <>
           <View className="flex-row items-center justify-between">
             <Text className="text-sm text-gray-700">Show Password</Text>

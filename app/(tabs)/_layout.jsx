@@ -1,7 +1,7 @@
 import { Tabs } from "expo-router";
 import React from "react";
 import { View } from "react-native";
-import { FontAwesome5 } from "@expo/vector-icons";
+import { FontAwesome6,FontAwesome5 } from "@expo/vector-icons";
 import { UserProvider } from "@/context/UserContext";
 export default function TabsLayout() {
   return (
@@ -34,7 +34,7 @@ export default function TabsLayout() {
             headerTitle: "Plans",
             headerTitleAlign: "left",
             tabBarIcon: ({ color }) => (
-              <FontAwesome5 name="weight-hanging" color={color} size={20} />
+              <FontAwesome6 name="dumbbell" color={color} size={20} />
             ),
           }}
         />

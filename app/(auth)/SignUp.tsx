@@ -72,17 +72,10 @@ const SignUp = () => {
               placeholder={"John Doe"}
               otherStyle={"mt-5"}
             />
-            <FormField
-              title="Email"
-              value={form.email}
-              handleChangeText={(e: any) => setForm({ ...form, email: e })}
-              keyboardType="email-address"
-              placeholder={"JohnDoe@gmail.com"}
-              otherStyle={"mt-5"}
-            />
+          
 
             <FormField
-              title="password"
+              title="Password"
               value={form.password}
               handleChangeText={(e: any) => setForm({ ...form, password: e })}
               keyboardType="email-address"

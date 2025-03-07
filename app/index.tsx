@@ -7,15 +7,22 @@ import Btn from "@/components/Btn";
 export default function Index() {
   return (
     <SafeAreaView className="h-full bg-bgnd">
-      <ScrollView contentContainerStyle={{ height: "100%" }}>
-        <View className="w-full items-center px-4">
+      <ScrollView>
+        <View className="w-full px-4 justify-center mt-28">
           <Image
             source={require("@/assets/images/fitness.png")}
-            className="w-full h-[84px] mt-10"
+            className="w-full h-[84px] "
             resizeMode="cover"
           />
         </View>
-        <View className="relative mt-24 w-36 mx-auto">
+        <View className="w-full px-4 justify-center mt-24">
+          <Image
+            source={require("@/assets/images/loader.gif")}
+            className="w-full h-80 mx-auto "
+            resizeMode="contain"
+          />
+        </View>
+        <View className=" w-36 mx-auto mt-20">
           <Text className="text-3xl  font-bold text-center">
             Lets Do it with <Text className="text-accent">Our App</Text>
           </Text>

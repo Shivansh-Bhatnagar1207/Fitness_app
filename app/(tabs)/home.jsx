@@ -81,12 +81,12 @@ export default function Home() {
           />
 
           {/* BMI Section */}
-          <View className="py-5 bg-white w-[95vw]  my-10 mx-auto px-5  rounded-3xl">
+          <View className="py-5 bg-white w-[95vw]  my-10 mx-auto px-5  rounded-3xl border border-primary">
             {/* <Text className="text-4xl text-center font-semibold text-seconday py-2">BMI</Text> */}
             <View className="flex-row justify-between">
               <Text className="text-base p-2">
                 <Text className="font-semibold">Height : </Text>
-                {Height} ft
+                {Height} m
               </Text>
               <Text className="text-base p-2">
                 <Text className="font-semibold">Weight : </Text>
@@ -129,9 +129,11 @@ export default function Home() {
           </View>
           {/* Discover Section with Smooth Slider & Indicators */}
           <View>
-            <Text className="text-center text-3xl font-bold text-accent">
-              Discover
-            </Text>
+            <View className="px-5">
+              <Text className="  text-3xl font-bold text-accent">
+                Discover <Text className="text-2xl">🧭</Text>{" "}
+              </Text>
+            </View>
 
             <Animated.ScrollView
               horizontal

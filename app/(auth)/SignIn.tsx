@@ -17,7 +17,6 @@ const SignIn = () => {
   const submit = async () => {
     const { email, password } = form;
 
-    // Validation
     if (!email || !password) {
       Alert.alert("Error", "Please fill in all fields.");
       return;
@@ -26,7 +25,6 @@ const SignIn = () => {
     setIsSubmitting(true);
 
     try {
-      // Sign in the user
       const userCredential = await signInWithEmailAndPassword(
         auth,
         email,
@@ -35,7 +33,7 @@ const SignIn = () => {
       const user = userCredential.user;
 
       Alert.alert("Success", `Welcome back, ${user.email}!`);
-      router.replace("/Home"); // Navigate to the home page (adjust the route as necessary)
+      router.replace("/Home"); 
     } catch (error: any) {
       console.error(error);
       let errorMessage = "Failed to sign in. Please try again.";
@@ -73,20 +71,19 @@ const SignIn = () => {
             otherStyle={"mt-5"}
           />
           <FormField
-            title="password"
+            title="Password"
             value={form.password}
             handleChangeText={(e: any) => setForm({ ...form, password: e })}
             keyboardType="email-address"
             placeholder={"************"}
             otherStyle={"mt-5"}
           />
-          {/* <View className="mt-20 bg-purple-300 rounded-xl min-h-[52px] items-center justify-center"> */}
+
           <Btn
             title={"Sign In"}
             handlePress={submit}
             isLoading={isSubmitting}
           />
-          {/* </View> */}
           <View className="justify-center pt-5 flex-row gap-2">
             <Text className="text-lg text-gray-500 font-bold">
               do not have an account?
