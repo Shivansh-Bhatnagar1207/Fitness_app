@@ -75,7 +75,7 @@ export default function Home() {
         <View>
           {/* Logo */}
           <Image
-            source={require("../../assets/images/logo.png")}
+            source={require("@/assets/images/fitness.png")}
             className="w-full h-[84px] mt-5"
             resizeMode="cover"
           />
@@ -152,7 +152,7 @@ export default function Home() {
                 }}
               >
                 <ImageBackground
-                  source={require("../../assets/images/confetti3.jpg")}
+                  source={require("@/assets/images/confetti3.jpg")}
                   className="flex-1 justify-center px-5 h-32 w-full"
                   resizeMode="cover"
                 >
@@ -181,7 +181,7 @@ export default function Home() {
                 }}
               >
                 <ImageBackground
-                  source={require("../../assets/images/confetti3.jpg")}
+                  source={require("@/assets/images/confetti3.jpg")}
                   className="flex-1 justify-center px-5"
                   resizeMode="cover"
                 >
@@ -210,7 +210,7 @@ export default function Home() {
                 }}
               >
                 <ImageBackground
-                  source={require("../../assets/images/confetti3.jpg")}
+                  source={require("@/assets/images/confetti3.jpg")}
                   className="flex-1 justify-center px-5"
                   resizeMode="cover"
                 >
@@ -294,14 +294,14 @@ export default function Home() {
               </TouchableOpacity>
             </View>
             <ImageBackground
-              source={require("../../assets/images/hero.jpg")}
+              source={require("@/assets/images/hero.jpg")}
               className="w-56 h-64 bg-white rounded-3xl overflow-hidden border border-primary"
               resizeMode="cover"
             ></ImageBackground>
           </View>
         </View>
         <ImageBackground
-          source={require("../../assets/images/background.jpg")}
+          source={require("@/assets/images/background.jpg")}
           className="flex-row justify-center my-5 border-primary border mx-auto rounded-full bg-secondary overflow-hidden"
         >
           <View className="h-20 w-30 px-5 flex items-center justify-center">

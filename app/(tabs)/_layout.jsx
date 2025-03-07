@@ -2,7 +2,7 @@ import { Tabs } from "expo-router";
 import React from "react";
 import { View } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
-import { UserProvider } from "../../context/UserContext";
+import { UserProvider } from "@/context/UserContext";
 export default function TabsLayout() {
   return (
     <UserProvider>

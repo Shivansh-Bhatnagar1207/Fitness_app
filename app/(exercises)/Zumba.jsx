@@ -1,7 +1,7 @@
 import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import mygif from '../../assets/images/workout/WA_PushUp.gif';
+import mygif from "@/assets/images/workout/WA_PushUp.gif";
 const Yoga = () => {
   return (
     <SafeAreaView className="h-screen bg-bgnd">
@@ -18,15 +18,13 @@ const Yoga = () => {
           <Text className=" font-semibold py-5">Wide Arm Pushups</Text>
 
           <Image
-            source={require("../../assets/images/workout/WA_PushUp.gif")}
-            
+            source={require("@/assets/images/workout/WA_PushUp.gif")}
             resizeMode="contain"
           />
           <Text className=" font-semibold py-5">Wide Arm Pushups</Text>
 
           <Image
-            source={require("../../assets/images/workout/WA_PushUp.gif")}
-            
+            source={require("@/assets/images/workout/WA_PushUp.gif")}
             resizeMode="contain"
           />
           <Text className=" font-semibold py-5">Wide Arm Pushups</Text>
@@ -35,7 +33,5 @@ const Yoga = () => {
     </SafeAreaView>
   );
 };
-
-
 
 export default Yoga;

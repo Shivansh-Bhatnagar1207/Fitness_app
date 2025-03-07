@@ -1,7 +1,7 @@
 import { View, Text, ScrollView, Image, Alert } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import FormField from "../../components/FormField";
+import FormField from "@/components/FormField";
 import Btn from "@/components/Btn";
 import { Link, router } from "expo-router";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
@@ -57,7 +57,7 @@ const SignUp = () => {
       <ScrollView>
         <View className="w-full h-full justify-center min-h-[85vh] px-4 my-6 ">
           <Image
-            source={require("../../assets/images/logo.png")}
+            source={require("@/assets/images/fitness.png")}
             className="w-full h-[85px] "
             resizeMode="cover"
           />

@@ -1,7 +1,7 @@
 import { View, Text, ScrollView, Image } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { auth } from "../../lib/firebaseConfig";
+import { auth } from "@/lib/firebaseConfig";
 import Btn from "@/components/Btn";
 import { useUser } from "@/context/UserContext";
 import { router } from "expo-router";
@@ -19,7 +19,6 @@ export default function Profile() {
     }
   };
 
-
   if (!user) {
     return <Text className="text-black">No user logged in.</Text>;
   }
@@ -29,7 +28,7 @@ export default function Profile() {
       <ScrollView>
         <View className="py-10">
           <Image
-            source={require("../../assets/images/logo.png")}
+            source={require("@/assets/images/fitness.png")}
             className="w-full h-[84px] "
             resizeMode="cover"
           />

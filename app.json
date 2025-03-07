@@ -4,7 +4,7 @@
     "slug": "fitness-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "assets/images/logo.png",
+    "icon": "./assets/images/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -13,7 +13,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "assets/images/logo.png",
+        "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.anonymous.fitnessapp"
@@ -25,6 +25,8 @@
     },
     "plugins": [
       "expo-router",
+      "@react-native-firebase/app",
+      "@react-native-firebase/auth",
       [
         "expo-splash-screen",
         {
@@ -43,7 +45,7 @@
         "origin": false
       },
       "eas": {
-        "projectId": "cafdecad-7beb-450f-8409-6b42e6546744"
+        "projectId": "73ea8bd8-aa45-4b65-834b-fc6f81b11689"
       }
     }
   }

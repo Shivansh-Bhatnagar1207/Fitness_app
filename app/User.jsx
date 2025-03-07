@@ -1,10 +1,10 @@
 import { View, Text, ScrollView, Image, Alert } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import FormField from "../components/FormField";
-import Btn from "../components/Btn";
+import FormField from "@/components/FormField";
+import Btn from "@/components/Btn";
 import { router } from "expo-router";
-import { auth, db } from "../lib/firebaseConfig";
+import { auth, db } from "@/lib/firebaseConfig";
 import { doc, setDoc } from "firebase/firestore";
 export default function User() {
   const [form, setForm] = useState({
@@ -81,13 +81,11 @@ export default function User() {
       <ScrollView>
         <View className="w-full h-full justify-center  min-h-[85vh] px-4 my-6 ">
           <Image
-            source={require("../assets/images/logo.png")}
+            source={require("@/assets/images/fitness.png")}
             resizeMode="cover"
             className="w-full h-32 "
           />
-          <Text className="font-bold text-center text-2xl">
-            User Details
-          </Text>
+          <Text className="font-bold text-center text-2xl">User Details</Text>
 
           <FormField
             title="Name"

@@ -14,7 +14,7 @@ const workout = () => {
     <SafeAreaView className="h-full bg-bgnd">
       <ScrollView>
         <ImageBackground
-          source={require("../../assets/images/confetti1.png")}
+          source={require("@/assets/images/confetti1.png")}
           resizeMode="cover"
           className="h-32 w-[30rem] py-2 flex justify-center mx-auto"
         >
@@ -30,7 +30,7 @@ const workout = () => {
           }}
         >
           <ImageBackground
-            source={require("../../assets/images/Cardio.jpg")}
+            source={require("@/assets/images/Cardio.jpg")}
             resizeMode="cover"
             className="h-48 "
           />
@@ -47,7 +47,7 @@ const workout = () => {
           }}
         >
           <ImageBackground
-            source={require("../../assets/images/meditation.jpg")}
+            source={require("@/assets/images/meditation.jpg")}
             resizeMode="cover"
             className="h-48 "
           />
@@ -64,7 +64,7 @@ const workout = () => {
           }}
         >
           <ImageBackground
-            source={require("../../assets/images/strech.jpg")}
+            source={require("@/assets/images/strech.jpg")}
             resizeMode="cover"
             className="h-48 "
           />
@@ -81,7 +81,7 @@ const workout = () => {
           }}
         >
           <ImageBackground
-            source={require("../../assets/images/wt.jpg")}
+            source={require("@/assets/images/wt.jpg")}
             resizeMode="cover"
             className="h-48 "
           />
@@ -98,7 +98,7 @@ const workout = () => {
           }}
         >
           <ImageBackground
-            source={require("../../assets/images/yoga.jpg")}
+            source={require("@/assets/images/yoga.jpg")}
             resizeMode="cover"
             className="h-48 "
           />
@@ -113,7 +113,7 @@ const workout = () => {
           }}
         >
           <ImageBackground
-            source={require("../../assets/images/zoomba.jpg")}
+            source={require("@/assets/images/zoomba.jpg")}
             resizeMode="cover"
             className="h-48 "
           />

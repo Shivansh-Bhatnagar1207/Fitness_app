@@ -11,31 +11,25 @@ const Yoga = () => {
       <ScrollView>
         <View className="items-center">
           <Image
-            source={require("../../assets/images/workout/WA_PushUp.gif")}
+            source={require("@/assets/images/workout/WA_PushUp.gif")}
             style={styles.container}
             resizeMode="contain"
           />
-          <Text className=" font-semibold py-5">
-            Wide Arm Pushups
-          </Text>
+          <Text className=" font-semibold py-5">Wide Arm Pushups</Text>
 
           <Image
-            source={require("../../assets/images/workout/WA_PushUp.gif")}
+            source={require("@/assets/images/workout/WA_PushUp.gif")}
             style={styles.container}
             resizeMode="contain"
           />
-          <Text className=" font-semibold py-5">
-            Wide Arm Pushups
-          </Text>
+          <Text className=" font-semibold py-5">Wide Arm Pushups</Text>
 
           <Image
-            source={require("../../assets/images/workout/WA_PushUp.gif")}
+            source={require("@/assets/images/workout/WA_PushUp.gif")}
             style={styles.container}
             resizeMode="contain"
           />
-          <Text className=" font-semibold py-5">
-            Wide Arm Pushups
-          </Text>
+          <Text className=" font-semibold py-5">Wide Arm Pushups</Text>
         </View>
       </ScrollView>
     </SafeAreaView>
