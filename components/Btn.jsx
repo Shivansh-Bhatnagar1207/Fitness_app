@@ -6,7 +6,8 @@ const Btn = ({ title, handlePress, isLoading }) => {
     <TouchableOpacity
       onPress={handlePress}
       activeOpacity={0.7}
-      className="bg-orange-500 mt-10 rounded-xl min-h-[52px] items-center justify-center "
+      className="bg-orange-500 mt-10 rounded-xl min-h-[52px] items-center justify-center"
+      style ={{padding : 20,borderRadius : 12}}
       disabled={isLoading}
     >
       <Text className="text-center font-bold text-white">{title}</Text>
