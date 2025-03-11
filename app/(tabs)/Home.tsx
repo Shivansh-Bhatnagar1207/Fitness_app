@@ -134,7 +134,23 @@ export default function Home() {
                 Discover <Text className="text-2xl">🧭</Text>{" "}
               </Text>
             </View>
-
+            <ImageBackground
+              source={require("@/assets/images/background.jpg")}
+              className="flex-row justify-center my-5 border-primary border mx-auto rounded-full bg-secondary overflow-hidden"
+            >
+              <View className="h-20 w-30 px-5 flex items-center justify-center">
+                <Text className="font-bold text-lg text-white ">0.00</Text>
+                <Text className=" font-bold text-lg text-white">KCAL</Text>
+              </View>
+              <View className="h-20 w-30 px-5 flex items-center justify-center">
+                <Text className="font-bold text-lg text-white ">0</Text>
+                <Text className="font-bold text-lg text-white">WORKOUTS</Text>
+              </View>
+              <View className="h-20 w-30 px-5 flex items-center justify-center">
+                <Text className="font-bold text-lg text-white">0</Text>
+                <Text className="font-bold text-lg text-white">MINUTES</Text>
+              </View>
+            </ImageBackground>
             <Animated.ScrollView
               horizontal
               pagingEnabled
@@ -302,23 +318,6 @@ export default function Home() {
             ></ImageBackground>
           </View>
         </View>
-        <ImageBackground
-          source={require("@/assets/images/background.jpg")}
-          className="flex-row justify-center my-5 border-primary border mx-auto rounded-full bg-secondary overflow-hidden"
-        >
-          <View className="h-20 w-30 px-5 flex items-center justify-center">
-            <Text className="font-bold text-lg text-white ">0.00</Text>
-            <Text className=" font-bold text-lg text-white">KCAL</Text>
-          </View>
-          <View className="h-20 w-30 px-5 flex items-center justify-center">
-            <Text className="font-bold text-lg text-white ">0</Text>
-            <Text className="font-bold text-lg text-white">WORKOUTS</Text>
-          </View>
-          <View className="h-20 w-30 px-5 flex items-center justify-center">
-            <Text className="font-bold text-lg text-white">0</Text>
-            <Text className="font-bold text-lg text-white">MINUTES</Text>
-          </View>
-        </ImageBackground>
       </ScrollView>
     </SafeAreaView>
   );

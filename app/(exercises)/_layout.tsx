@@ -10,7 +10,7 @@ export default function ExerciseLayout() {
         headerTintColor: "white",
       }}
     >
-      <Stack.Screen name="Weight" />
+      <Stack.Screen name="Weight" options={{ title: "Weight Training" }} />
       <Stack.Screen name="Zumba" />
       <Stack.Screen name="Cardio" />
       <Stack.Screen name="Streching" />

@@ -38,5 +38,5 @@ google-services.json
 *.tsbuildinfo
 
 app-example
-/android
+android/
 lib/

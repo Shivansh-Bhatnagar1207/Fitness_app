@@ -61,14 +61,14 @@ const SignUp = () => {
             className="w-full h-[85px] "
             resizeMode="cover"
           />
-          <Text className="text-semibold text-center text-2xl mt-10">
+          <Text className="text-bold text-center text-2xl mt-10">
             Sign Up in Fitness App
           </Text>
           <View className="w-[85%] mx-auto">
             <FormField
-              title="Name"
-              value={form.username}
-              handleChangeText={(e: any) => setForm({ ...form, username: e })}
+              title="Email"
+              value={form.email}
+              handleChangeText={(e: any) => setForm({ ...form, email: e })}
               placeholder={"John Doe"}
               otherStyle={"mt-5"}
             />

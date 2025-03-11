@@ -2,7 +2,6 @@ import { View, Text, ScrollView, ImageBackground, TouchableOpacity } from "react
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { SlideInRight } from "react-native-reanimated";
 
 const Yoga = () => {
   return (
@@ -37,15 +36,15 @@ const Yoga = () => {
                 Intermediate
               </Text>
             </TouchableOpacity>
-            <View className="bg-[#E57373] h-24 w-44 rounded-3xl flex items-center justify-center border-[#C62828] border">
+            <TouchableOpacity className="bg-[#E57373] h-24 w-44 rounded-3xl flex items-center justify-center border-[#C62828] border">
               <Text className="text-2xl font-semibold text-white">
                 Advanced
               </Text>
-            </View>
+            </TouchableOpacity>
           </View>
-          <TouchableOpacity className="ml-80 flex-row">
+          <View className="ml-80 flex-row">
             <Ionicons name="sparkles-outline" size={30} color="#FFBD73" />
-          </TouchableOpacity>
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
